@@ -1,39 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import MyComponent from "./components/MyComponent";
-import { SecondComponent, ThirdComponent } from "./components/SecondComponent";
+import "./components/todo/todo.css";
+import TodoInput from "./components/todo/TodoInput";
+import TodoTask from "./components/todo/TodoTask";
+import reactlogo from "./assets/react.svg"; //Tối ưu hóa hiệu năng
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
+  const name = "Nguyen Hong Duc";
+  const age = "18";
+  const data = {
+    address: "Ninh Binh",
+    country: "Viet Nam",
+  };
   return (
-    <>
+    <div className="ToDoList-Manager">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img className="img" src={reactlogo} />
       </div>
-      <h1>Hello world</h1>
-      <MyComponent />
-      <SecondComponent />
-      <ThirdComponent />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <div className="ToDoList-Title">Todo list</div>
+      <TodoInput name={name} age={age} data={{ data }} />
+      <TodoTask />
+    </div>
   );
 };
 
