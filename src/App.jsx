@@ -10,14 +10,17 @@ const App = () => {
     address: "Ninh Binh",
     country: "Viet Nam",
   };
+  const addNew = (name) => {
+    alert(`Call me ${name}`);
+  };
   return (
     <div className="ToDoList-Manager">
       <div>
         <img className="img" src={reactlogo} />
       </div>
       <div className="ToDoList-Title">Todo list</div>
-      <TodoInput name={name} age={age} data={{ data }} />
-      <TodoTask />
+      <TodoInput addNew={addNew} />
+      <TodoTask name={name} age={age} data={{ data }} />
     </div>
   );
 };

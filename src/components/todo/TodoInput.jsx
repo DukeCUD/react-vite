@@ -1,6 +1,6 @@
 const TodoInput = (props) => {
-  const { name, age } = props;
-  console.log(">> check props: ", props);
+  const { addNew } = props;
+  addNew("Nguyen Hong Duc");
   return (
     <div className="ToDolist-Input">
       <input
@@ -9,9 +9,6 @@ const TodoInput = (props) => {
         placeholder="Enter your task"
       ></input>
       <button className="bth">Add</button>
-      <div>
-        Name: {name} - Age: {age}
-      </div>
     </div>
   );
 };
