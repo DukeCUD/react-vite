@@ -1,14 +1,34 @@
+import { useState } from "react";
+
 const TodoInput = (props) => {
   const { addNew } = props;
-  addNew("Nguyen Hong Duc");
+  const [valueInput, setValueInput] = useState("");
+  // valueInput là biến thay đổi
+  //setValueInput là hàm thay đổi giá trị
+
+  const handChange = (name) => {
+    setValueInput(name);
+    // Thay đổi trong bộ nhớ, không ảnh hưởng bên ngoài
+  };
+
+  const handleClick = () => {
+    addNew(valueInput);
+  };
+
   return (
     <div className="ToDolist-Input">
       <input
+        onChange={(event) => {
+          handChange(event.target.value);
+        }}
         type="text"
         className="input"
         placeholder="Enter your task"
       ></input>
-      <button className="bth">Add</button>
+      <button onClick={handleClick} className="bth">
+        Add
+      </button>
+      <div>My input is = {valueInput}</div>
     </div>
   );
 };
