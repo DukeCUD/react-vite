@@ -6,12 +6,6 @@ Template này được sử dụng cho series React Ultimate (Vite)
 
 https://nodejs.org/download/release/v20.14.0/
 
-## Về chúng tôi
-
-Facebook "Hồng Đức": https://www.facebook.com/duke7925
-
-===
-
 Các bước cài đặt: (chế độ development)
 
 1. clone code
