@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TodoInput = (props) => {
-  const { addNew } = props;
+  const { addNew, deleteData } = props;
   const [valueInput, setValueInput] = useState("");
   // valueInput là biến thay đổi
   //setValueInput là hàm thay đổi giá trị
@@ -13,14 +13,14 @@ const TodoInput = (props) => {
 
   const handleClick = () => {
     addNew(valueInput);
+    setValueInput("");
   };
 
   return (
     <div className="ToDolist-Input">
       <input
-        onChange={(event) => {
-          handChange(event.target.value);
-        }}
+        onChange={(event) => handChange(event.target.value)}
+        value={valueInput} // Tạo mới thuộc tính value để kiếm soát dữ liệu nhập vào
         type="text"
         className="input"
         placeholder="Enter your task"

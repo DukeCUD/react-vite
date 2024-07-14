@@ -1,14 +1,22 @@
 const TodoTask = (props) => {
-  const { name, age } = props;
+  const { todoList, deleteData } = props;
   console.log(">> check props: ", props);
+  const handDelete = (id) => {
+    deleteData(id);
+  };
   return (
     <div className="ToDoList-Task">
-      <div>
-        Name: {name} - Age: {age}
-      </div>
-      <div>Learning React</div>
-      <div>Writing React</div>
-      <div>{JSON.stringify(props.todoList)}</div>
+      {todoList.map((item, value) => {
+        console.log(">> Check props: ", item, value);
+        return (
+          <div className="list" key={item.id}>
+            <div className="item">{item.name} </div>
+            <button onClick={() => handDelete(item.id)} className="item">
+              Delete
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 };
