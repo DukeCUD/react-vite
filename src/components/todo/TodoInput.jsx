@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TodoInput = (props) => {
-  const { addNew, deleteData } = props;
+  const { addNew } = props;
   const [valueInput, setValueInput] = useState("");
   // valueInput là biến thay đổi
   //setValueInput là hàm thay đổi giá trị
