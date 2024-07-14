@@ -6,11 +6,6 @@ body {
 }
 .ToDoList-Manager {
   text-align: center;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 80px 80px;
   border: 1px solid #000;
   padding-top: 8px;
@@ -55,7 +50,7 @@ bth:hover,
   border: 2px solid black;
   font-family: Arial, Helvetica, sans-serif;
   /* border: none; */
-  padding: 20px;
+  padding: 10px;
 }
 .img {
   margin-top: 30px;
