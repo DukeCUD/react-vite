@@ -1,15 +1,22 @@
 import { Button, Input } from "antd";
 import { useState } from "react";
-
+import axios from "axios";
 const UserForm = () => {
   const [fullName, setFullName] = useState("");
-  const [gmail, setGmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  console.log(">> check info", fullName, gmail, password, phoneNumber);
+  const [phone, setPhoneNumber] = useState("");
+  console.log(">> check info", fullName, email, password, phone);
 
   const handleClick = () => {
-    alert("Click");
+    const URL_BACKEND = "http://localhost:8080/api/v1/user";
+    const data = {
+      fullName,
+      email,
+      password,
+      phone,
+    };
+    axios.post(URL_BACKEND, data);
   };
 
   return (
@@ -27,11 +34,11 @@ const UserForm = () => {
           />
         </div>
         <div>
-          <span> Gmail</span>
+          <span> Email</span>
           <Input
-            value={gmail}
-            onChange={(event) => setGmail(event.target.value)}
-            placeholder="Gmail"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Email"
           />
         </div>
         <div>
@@ -45,7 +52,7 @@ const UserForm = () => {
         <div>
           <span>Phone number</span>
           <Input
-            value={phoneNumber}
+            value={phone}
             onChange={(event) => setPhoneNumber(event.target.value)}
             placeholder="Phone number"
           />
