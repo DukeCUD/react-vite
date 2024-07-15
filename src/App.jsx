@@ -42,6 +42,7 @@ const App = () => {
         )}
       </div>
       <Footer />
+      {/* Chọn những phầ`n được thừa kế từ parent-page  */}
       <Outlet />
     </>
   );
