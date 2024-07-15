@@ -8,9 +8,8 @@ const App = () => {
     <>
       <Header />
       <Outlet />
-
-      <Footer />
       {/* Chọn những phầ`n được thừa kế từ parent-page  */}
+      <Footer />
     </>
   );
 };
